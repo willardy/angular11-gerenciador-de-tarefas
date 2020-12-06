@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'angular11-gerenciador-de-tarefas'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular11-gerenciador-de-tarefas');
+    expect(app.title).toEqual('Gerenciador de Tarefas');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular11-gerenciador-de-tarefas app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Gerenciador de Tarefas');
   });
 });

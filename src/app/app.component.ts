@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular11-gerenciador-de-tarefas';
+  title = 'Gerenciador de Tarefas';
 }
