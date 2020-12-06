@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular11-gerenciador-de-tarefas"
+  "defaultProject": "angular11-gerenciador-de-tarefas",
+  "cli": {
+    "analytics": "ce1917c4-f916-4aa9-ba86-70929f402e80"
+  }
 }
