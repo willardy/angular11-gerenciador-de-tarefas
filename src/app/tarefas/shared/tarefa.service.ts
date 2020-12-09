@@ -18,11 +18,12 @@ export class TarefaService {
     const tarefas = this.listarTodos();
     tarefa.id = new Date().getTime();
     tarefas.push(tarefa);
-    localStorage.tarefas = JSON.stringify(tarefas);
+    this.atualizarLocalStorage(tarefas);
   }
 
-  buscarPorId(id: number): Tarefa | undefined {
+  buscarPorId(id: number): Tarefa{
     const tarefas: Tarefa[] = this.listarTodos();
+    // @ts-ignore
     return tarefas.find(tarefa => tarefa.id === id);
   }
 
@@ -33,12 +34,14 @@ export class TarefaService {
         objs[index] = tarefa;
       }
     });
+
+    this.atualizarLocalStorage(tarefas);
   }
 
   remover(id: number): void {
     let tarefas: Tarefa[] = this.listarTodos();
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
-    localStorage.tarefas = JSON.stringify(tarefas);
+    this.atualizarLocalStorage(tarefas);
   }
 
   alterarStatus(id: number): void {
@@ -48,6 +51,10 @@ export class TarefaService {
         array[index].concluida = !value.concluida;
       }
     });
+  }
+
+  private atualizarLocalStorage(tarefas: Tarefa[]): void {
+    localStorage.tarefas = JSON.stringify(tarefas);
   }
 
 }
