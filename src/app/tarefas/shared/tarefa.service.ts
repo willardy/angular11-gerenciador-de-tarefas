@@ -51,6 +51,7 @@ export class TarefaService {
         array[index].concluida = !value.concluida;
       }
     });
+    this.atualizarLocalStorage(tarefas);
   }
 
   private atualizarLocalStorage(tarefas: Tarefa[]): void {
