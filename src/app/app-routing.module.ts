@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {TarefaRoutes} from './tarefas';
+import {TAREFASROUTES} from './tarefas';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     redirectTo: '/tarefas/listar',
     pathMatch: 'full'
   },
-  ...TarefaRoutes
+  ...TAREFASROUTES
 ];
 
 @NgModule({

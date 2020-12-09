@@ -4,7 +4,7 @@ import {ListarTarefaComponent} from './listar';
 import {CadastrarTarefaComponent} from './cadastrar';
 import {EditarTarefasComponent} from './editar';
 
-export const TarefaRoutes: Routes = [
+export const TAREFASROUTES: Routes = [
   {
     path: 'tarefas',
     redirectTo: 'tarefas/listar'
