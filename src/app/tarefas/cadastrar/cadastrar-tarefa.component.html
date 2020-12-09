@@ -1,1 +1,46 @@
-<p>cadastrar-tarefa works!</p>
+<h1>Cadastrar tarefa </h1>
+
+<div class="card">
+  <div class="card-body">
+    <form #formTarefa="ngForm">
+      <div class="form-group">
+        <label for="nome">Tarefa</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          [(ngModel)]="tarefa.nome"
+          #nome="ngModel"
+          minlength="5"
+          required>
+        <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+          <div [hidden]="!nome.errors.required">
+            Campo obrigatório.
+          </div>
+          <div [hidden]="!nome.errors.minlength">
+            A tarefa deve conter ao menos 5 caracteres
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group text-center">
+        <input
+          type="submit"
+          class="btn btn-success"
+          value="Cadastrar"
+          (click)="cadastrar()"
+          [disabled]="!formTarefa.form.valid">
+        <a class="btn btn-danger">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+          </svg>
+          Voltar
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>
